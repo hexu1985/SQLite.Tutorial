@@ -42,4 +42,27 @@ CREATE VIEW schema as select * from sqlite_master
 /* schema(type,name,tbl_name,rootpage,sql) */;
 ```
 
+更详细的schema信息可以通过SQLite的重要系统视图sqlite_master得到。
+
+```
+sqlite> .schema sqlite_master
+CREATE TABLE sqlite_master (
+  type text,
+  name text,
+  tbl_name text,
+  rootpage integer,
+  sql text
+);
+```
+
+查询当前数据库的sqlite_master表，返回如下内容：
+
+```
+sqlite> select type, name, tbl_name, sql from sqlite_master order by type;
+type        name        tbl_name    sql
+----------  ----------  ----------  -------------------------------------
+index       test_idx    test        CREATE INDEX test_idx on test (value)
+table       test        test        CREATE TABLE test (id integer primary
+view        schema      schema      CREATE VIEW schema as select * from s
+```
 
