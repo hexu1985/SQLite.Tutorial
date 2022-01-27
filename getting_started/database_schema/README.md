@@ -55,6 +55,16 @@ CREATE TABLE sqlite_master (
 );
 ```
 
+sqlite_master表的字段说明
+
+| Name | Description |
+| ---- | ----------- |
+| type | The object’s type (table, index, view, trigger) |
+| name | The object’s name |
+| tbl_name | The table the object is associated with |
+| rootpage | The object’s root page index in the database (where it begins) |
+| sql | The object’s SQL definition (DDL) |
+
 查询当前数据库的sqlite_master表，返回如下内容：
 
 ```
@@ -66,3 +76,5 @@ table       test        test        CREATE TABLE test (id integer primary
 view        schema      schema      CREATE VIEW schema as select * from s
 ```
 
+#### 参考资料:
+《SQLite权威指南》: 第2章
