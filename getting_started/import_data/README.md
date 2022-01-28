@@ -54,3 +54,5 @@ Error: near line 8: index test_idx already exists
 Error: near line 9: table schema already exists
 ```
 
+#### 参考资料:
+《SQLite权威指南》: 第2章

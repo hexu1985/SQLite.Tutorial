@@ -343,3 +343,7 @@ $ wget -c "http://www.sqlite.org/2013/sqlite-analyzer-linux-x86-3080200.zip"
 $ unzip sqlite-analyzer-linux-x86-3080200.zip
 $ sudo mv sqlite3_analyzer /usr/local/bin/
 ```
+
+#### 参考资料:
+《SQLite权威指南》: 第2章
+[〖Linux〗Ubuntu 64位安装sqlite3_analyzer](https://www.cnblogs.com/scue/p/3535231.html)

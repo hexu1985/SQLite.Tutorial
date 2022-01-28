@@ -52,3 +52,5 @@ rowseparator: "\n"
     filename: :memory:
 ```
 
+#### 参考资料:
+《SQLite权威指南》: 第2章

@@ -29,3 +29,6 @@ CREATE INDEX test_idx on test (value);
 CREATE VIEW schema as select * from sqlite_master;
 COMMIT;
 ```
+
+#### 参考资料:
+《SQLite权威指南》: 第2章
