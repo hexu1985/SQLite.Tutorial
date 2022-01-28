@@ -79,6 +79,42 @@ sqlite> .help
 sqlite>.exit
 ```
 
+CLP提供了几个格式化选项命令：
+
+- .echo设置为on时，它将回显输入的命令
+- .headers设置为on时，查询结果显示时带有字段名
+- .nullvalue命令用于设置NULL值的显示。例如，如果需要以一个字符串NULL来显示null值，只需简单执行`.nullvalue NULL`命令。默认情况下，这种null显示时是空串。
+
+使用.show命令，可以查询用户Shell中定义的所有设置。
+
+```
+$ sqlite3
+SQLite version 3.31.1 2020-01-27 19:55:54
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .show
+        echo: off
+         eqp: off
+     explain: auto
+     headers: off
+        mode: list
+   nullvalue: ""
+      output: stdout
+colseparator: "|"
+rowseparator: "\n"
+       stats: off
+       width:
+    filename: :memory:
+```
+
+如果要改变CLP的Shell提示符，使用.prompt [value]，如：
+
+```
+sqlite> .prompt 'sqlite3>'
+sqlite3>
+```
+
 #### 命令行模式的CLP
 
 你可以从命令行使用CLP，执行如导入/导出数据、返回结果集和一般的批处理工作。
@@ -128,44 +164,6 @@ OPTIONS include:
 - 可选列表（可选的）
 - 数据库文件名（可选的）
 - 要执行的SQL命令（可选的）
-
-#### 格式化
-
-CLP提供了几个格式化选项命令：
-
-- .echo设置为on时，它将回显输入的命令
-- .headers设置为on时，查询结果显示时带有字段名
-- .nullvalue命令用于设置NULL值的显示。例如，如果需要以一个字符串NULL来显示null值，只需简单执行`.nullvalue NULL`命令。默认情况下，这种null显示时是空串。
-
-使用.show命令，可以查询用户Shell中定义的所有设置。
-
-```
-$ sqlite3
-SQLite version 3.31.1 2020-01-27 19:55:54
-Enter ".help" for usage hints.
-Connected to a transient in-memory database.
-Use ".open FILENAME" to reopen on a persistent database.
-sqlite> .show
-        echo: off
-         eqp: off
-     explain: auto
-     headers: off
-        mode: list
-   nullvalue: ""
-      output: stdout
-colseparator: "|"
-rowseparator: "\n"
-       stats: off
-       width:
-    filename: :memory:
-```
-
-如果要改变CLP的Shell提示符，使用.prompt [value]，如：
-
-```
-sqlite> .prompt 'sqlite3>'
-sqlite3>
-```
 
 #### 参考资料:
 《SQLite权威指南》: 第2章
