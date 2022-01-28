@@ -34,3 +34,6 @@ $ sqlite3 test.db < test.sql
 $ sqlite3 test.db vacumm
 $ cp test.db test.backup
 ```
+
+#### 参考资料:
+《SQLite权威指南》: 第2章
