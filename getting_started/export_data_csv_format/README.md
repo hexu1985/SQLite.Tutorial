@@ -1,6 +1,6 @@
-### 导出数据格式化
+### 导出数据成CSV格式
 
-.mode命令可以设置结果数据的几种输出格式。可选的格式有csv、column、html、insert、line、list、tabs和tcl，每种格式都用不同的用途。默认值是list，list模式下显示结果集时列间以默认的分割符分割。
+.mode命令可以设置结果数据的几种输出格式。可选的格式有csv、column、html、insert、line、list、tabs和tcl，每种格式都用不同的用途。默认值是list，list模式下显示结果集时列间以默认的分隔符分隔。
 
 如果想以CSV格式输出一个表的数据，可进行如下操作：
 
