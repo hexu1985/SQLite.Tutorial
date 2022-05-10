@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
 import sqlite3
@@ -7,9 +7,9 @@ conn = sqlite3.connect('test.db')
 cur = conn.cursor()
 print ("数据库打开成功")
 
-cur.execute("UPDATE COMPANY set SALARY = 25000.00 where ID=?", (1, ))
+cur.execute("DELETE from COMPANY where ID=:id;", {"id":1})
 conn.commit()
-print("Total number of rows updated : {}".format(conn.total_changes))
+print("Total number of rows deleted : {}".format(conn.total_changes))
 
 cursor = conn.execute("SELECT id, name, address, salary  from COMPANY")
 for row in cursor:
