@@ -17,3 +17,5 @@ $ sqlite3 -version
 ```
 $ sudo apt-get install libsqlite3-dev 
 ```
+
+3. SQLite教程链接<https://www.runoob.com/sqlite/sqlite-tutorial.html>

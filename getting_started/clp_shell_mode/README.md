@@ -113,5 +113,32 @@ sqlite> .prompt 'sqlite3>'
 sqlite3>
 ```
 
+格式化输出:
+可以使用下列的点命令来格式化输出为本教程下面所列出的格式：
+
+```
+sqlite>.header on
+sqlite>.mode column
+sqlite>.timer on
+sqlite>
+```
+
+上面设置将产生如下格式的输出：
+
+```
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+1           Paul        32          California  20000.0
+2           Allen       25          Texas       15000.0
+3           Teddy       23          Norway      20000.0
+4           Mark        25          Rich-Mond   65000.0
+5           David       27          Texas       85000.0
+6           Kim         22          South-Hall  45000.0
+7           James       24          Houston     10000.0
+CPU Time: user 0.000000 sys 0.000000
+```
+
 #### 参考资料:
 《SQLite权威指南》: 第2章
+[SQLite 命令](https://www.runoob.com/sqlite/sqlite-commands.html)
+
