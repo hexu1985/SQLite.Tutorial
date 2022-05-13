@@ -20,3 +20,4 @@ $ cmake --build build --target install
 
 - [SQLiteCpp主页](http://srombauts.github.io/SQLiteCpp/)
 - [SQLiteCpp仓库](https://github.com/SRombauts/SQLiteCpp)
+- [SQLiteCpp_Example仓库](https://github.com/SRombauts/SQLiteCpp_Example)
