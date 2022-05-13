@@ -14,7 +14,8 @@ int main()
     SQLite::Statement qry(db, "UPDATE COMPANY set SALARY = :salary where ID=:id");
     qry.bind(":id", 1);
     qry.bind(":salary", 25000);
-    while (qry.executeStep()) {}
+    qry.exec();
+    printf("Total number of rows deleted : %d\n", qry.getChanges());
 
     SQLite::Statement query(db, "SELECT id, name, address, salary  from COMPANY");
     while (query.executeStep()) {
