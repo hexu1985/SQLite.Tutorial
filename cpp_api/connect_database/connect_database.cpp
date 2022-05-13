@@ -7,9 +7,9 @@
 
 int main()
 {
-    SQLite::Database db("test.db3", SQLite::OPEN_READWRITE|SQLite::OPEN_CREATE);
-    //SQLite::Database db("test.db3");
-    std::cout << "SQLite database file '" << db.getFilename().c_str() << "' opened successfully\n";
+    SQLite::Database db("test.db", SQLite::OPEN_READWRITE|SQLite::OPEN_CREATE);
+    //SQLite::Database db("test.db");
+    printf("数据库打开成功\n");
 
     return 0;
 }
