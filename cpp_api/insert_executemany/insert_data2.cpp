@@ -4,7 +4,6 @@
 #include <cstdlib>
 
 #include <SQLiteCpp/SQLiteCpp.h>
-#include <SQLiteCpp/Transaction.h>
 #include <SQLiteCpp/ExecuteMany.h>
 
 int main()
