@@ -1,5 +1,11 @@
 ### 创建数据库表
 
+创建数据库表的语法如下:
+
+```
+create [temp] table table_name (column_definitions [, constraints]);
+```
+
 数据库示例, 表结构如下:
 
 ![food database](food_database.png)
