@@ -140,5 +140,6 @@ CPU Time: user 0.000000 sys 0.000000
 
 #### 参考资料:
 《SQLite权威指南》: 第2章
-[SQLite 命令](https://www.runoob.com/sqlite/sqlite-commands.html)
+
+SQLite 命令: <https://www.runoob.com/sqlite/sqlite-commands.html>
 
