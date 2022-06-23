@@ -18,4 +18,13 @@ $ sqlite3 -version
 $ sudo apt-get install libsqlite3-dev 
 ```
 
-3. SQLite教程链接<https://www.runoob.com/sqlite/sqlite-tutorial.html>
+3. 安装sqlitebrowser
+
+```
+$ sudo snap install sqlitebrowser
+```
+
+4. SQLite教程链接: <https://www.runoob.com/sqlite/sqlite-tutorial.html>
+
+
+5. sqlitebrowser链接: <https://snapcraft.io/sqlitebrowser>
