@@ -12,3 +12,5 @@
 ### 数据库查询
 
 - [表查询](select/README.md)
+- [where子句](where/README.md)
+- [limit子句](limit/README.md)
