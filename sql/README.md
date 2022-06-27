@@ -13,4 +13,7 @@
 
 - [表查询](select/README.md)
 - [where子句](where/README.md)
+- [order by子句](order_by/README.md)
 - [limit子句](limit/README.md)
+- [函数](function/README.md)
+- [聚合函数](aggregate/README.md)
