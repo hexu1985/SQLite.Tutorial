@@ -27,8 +27,9 @@ int main()
             fprintf(stderr, "SQL error: %s\n", zErr);
             sqlite3_free(zErr);
         }
+    } else {
+        printf("数据表删除成功\n");
     }
-    printf("数据表删除成功\n");
 
     sqlite3_close(db);
 
