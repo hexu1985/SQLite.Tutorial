@@ -44,6 +44,8 @@ int main(int argc, char **argv)
         rc = sqlite3_step(stmt);
     }
 
+    printf("数据操作成功\n");
+
     sqlite3_finalize(stmt);
 
 close_db:
