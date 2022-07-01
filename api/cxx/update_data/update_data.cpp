@@ -11,6 +11,7 @@ int main()
     printf("数据库打开成功\n");
 
     db.exec("UPDATE COMPANY set SALARY = 25000.00 where ID=1");
+    printf("Total number of rows updated : %d\n", db.getChanges());
 
     SQLite::Statement query(db, "SELECT id, name, address, salary from COMPANY");
     while (query.executeStep()) {

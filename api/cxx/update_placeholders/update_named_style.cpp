@@ -15,7 +15,7 @@ int main()
     qry.bind(":id", 1);
     qry.bind(":salary", 25000);
     qry.exec();
-    printf("Total number of rows deleted : %d\n", qry.getChanges());
+    printf("Total number of rows updated : %d\n", qry.getChanges());
 
     SQLite::Statement query(db, "SELECT id, name, address, salary  from COMPANY");
     while (query.executeStep()) {
