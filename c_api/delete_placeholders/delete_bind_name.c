@@ -6,7 +6,6 @@
 int main()
 {
     sqlite3 *db;
-    char *zErr;
     int rc;
     sqlite3_stmt *stmt;
     char *sql;
@@ -22,19 +21,19 @@ int main()
 
     printf("数据库打开成功\n");
 
-    sql = "DELETE from COMPANY where ID=2;";
+    sql = "DELETE from COMPANY where ID=:id;";
 
-    rc = sqlite3_exec(db, sql, NULL, NULL, &zErr);
+    rc = sqlite3_prepare(db, sql, (int)strlen(sql), &stmt, &tail);
 
     if (rc != SQLITE_OK) {
-        if (zErr != NULL) {
-            fprintf(stderr, "SQL error: %s\n", zErr);
-            sqlite3_free(zErr);
-        }
+        fprintf(stderr, "SQL error: %s\n", tail);
         goto close_db;
-    } else {
-        printf("Total number of rows deleted : %d\n", sqlite3_changes(db));
-    }
+    } 
+
+    sqlite3_bind_int(stmt, sqlite3_bind_parameter_index(stmt, ":id"), 1);
+    sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    printf("Total number of rows deleted : %d\n", sqlite3_changes(db));
 
     sql = "SELECT id, name, address, salary from COMPANY;";
 
