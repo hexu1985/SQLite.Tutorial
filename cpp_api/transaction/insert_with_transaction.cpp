@@ -23,6 +23,10 @@ int main()
         
         db.exec("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) \
               VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 )");
+
+        db.exec("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) \
+              VALUES (1, 'Paul', 32, 'California', 20000.00 )");
+        
         transaction.commit();
 
         printf("数据插入成功\n");
