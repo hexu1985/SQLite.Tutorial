@@ -7,7 +7,7 @@ conn = sqlite3.connect('test.db')
 cur = conn.cursor()
 print ("数据库打开成功")
 
-cur.execute("UPDATE COMPANY set SALARY = 25000.00 where ID=?", (1, ))
+cur.execute("UPDATE COMPANY set SALARY=? where ID=?", (25000.00, 1))
 conn.commit()
 print("Total number of rows updated : {}".format(conn.total_changes))
 
