@@ -1,3 +1,5 @@
+.echo on
+
 .tables
 
 .indices test
