@@ -99,3 +99,19 @@ sqlite>.quit
 $
 ```
 
+.dump 命令
+
+您可以在命令提示符中使用 SQLite .dump 点命令来导出完整的数据库在一个文本文件中，如下所示：
+
+```
+$sqlite3 testDB.db .dump > testDB.sql
+```
+
+上面的命令将转换整个 testDB.db 数据库的内容到 SQLite 的语句中，并将其转储到 ASCII 文本文件 testDB.sql 中。您可以通过简单的方式从生成的 testDB.sql 恢复，如下所示：
+
+```
+$sqlite3 testDB.db < testDB.sql
+```
+
+
+
