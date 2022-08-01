@@ -1,4 +1,4 @@
-rm -f test.db
+rm -f test.db file.sql
 
 echo "init database"
 sqlite3 test.db < init_database.sql
