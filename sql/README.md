@@ -4,10 +4,11 @@
 
 - [注释](comments/README.md)
 
-### 创建数据库
+### 数据库修改
 
-- [创建表](creating_tables/README.md)
-- [修改表](altering_tables/README.md)
+- [创建表](create_tables/README.md)
+- [约束](constraint/README.md)
+- [删除表](drop_tables/README.md)
 
 ### 数据库查询
 
