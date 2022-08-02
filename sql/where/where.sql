@@ -1,15 +1,23 @@
-
 .echo on
+.header on
 .mode column
-.headers on
-.nullvalue NULL
 
-select * from foods where name='JujyFruit' and type_id=9;
+SELECT * FROM COMPANY WHERE AGE >= 25 AND SALARY >= 65000;
 
-select id, name from foods where name like 'J%';
+SELECT * FROM COMPANY WHERE AGE >= 25 OR SALARY >= 65000;
 
-select id, name from foods where name like '%ac%P%';
+SELECT * FROM COMPANY WHERE AGE IS NOT NULL;
 
-select id, name from foods where name like '%ac%P%' and name not like '%Sch%';
+SELECT * FROM COMPANY WHERE NAME LIKE 'Ki%';
 
-select id, name from foods where name glob 'Pine*';
+SELECT * FROM COMPANY WHERE NAME GLOB 'Ki*';
+
+SELECT * FROM COMPANY WHERE AGE IN ( 25, 27 );
+
+SELECT * FROM COMPANY WHERE AGE NOT IN ( 25, 27 );
+
+SELECT * FROM COMPANY WHERE AGE BETWEEN 25 AND 27;
+
+SELECT AGE FROM COMPANY;
+
+SELECT * FROM COMPANY;
