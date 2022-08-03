@@ -4,10 +4,24 @@
 .headers on
 .nullvalue NULL
 
-select upper('hello newman'), length('hello newman'), abs(-12);
+SELECT count(*) FROM COMPANY;
 
-select id, upper(name), length(name) from foods
-where type_id=1 limit 10;
+SELECT max(salary) FROM COMPANY;
 
-select id, upper(name), length(name) from foods
-where length(name) < 5 limit 5;
+SELECT min(salary) FROM COMPANY;
+
+SELECT avg(salary) FROM COMPANY;
+
+SELECT sum(salary) FROM COMPANY;
+
+SELECT random() AS Random;
+
+SELECT abs(5), abs(-15), abs(NULL), abs(0), abs("ABC");
+
+SELECT upper(name) FROM COMPANY;
+
+SELECT lower(name) FROM COMPANY;
+
+SELECT name, length(name) FROM COMPANY;
+
+SELECT sqlite_version() AS 'SQLite Version';

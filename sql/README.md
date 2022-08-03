@@ -21,5 +21,4 @@
 - [过滤](where/README.md)
 - [排序](order_by/README.md)
 - [限定](limit/README.md)
-- [函数](function/README.md)
-- [聚合函数](aggregate/README.md)
+- [常用函数](function/README.md)
