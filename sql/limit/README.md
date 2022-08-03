@@ -1,65 +1,70 @@
-### limit子句
+### SQLite Limit 子句
 
-SQLite 的 LIMIT 子句用于限制由 SELECT 语句返回的数据数量.
+SQLite 的 LIMIT 子句用于限制由 SELECT 语句返回的数据数量。
 
-带有 LIMIT 子句的 SELECT 语句的基本语法如下:
+带有 LIMIT 子句的 SELECT 语句的基本语法如下：
 
 ```
-SELECT column1, column2, columnN
+SELECT column1, column2, columnN 
 FROM table_name
 LIMIT [no of rows]
 ```
 
-示例SQL语句:
+下面是 LIMIT 子句与 OFFSET 子句一起使用时的语法：
 
 ```
-sqlite> select * from foods where name like 'B%' order by type_id desc, name limit 10;
-id          type_id     name
-----------  ----------  -----------
-382         15          Baked Beans
-383         15          Baked Potat
-384         15          Big Salad
-385         15          Brocolli
-362         14          Bouillabais
-328         12          BLT
-327         12          Bacon Club
-326         12          Bologna
-329         12          Brisket San
-274         10          Bacon
-```
-
-下面是 LIMIT 子句与 OFFSET 子句一起使用时的语法:
-
-```
-SELECT column1, column2, columnN
+SELECT column1, column2, columnN 
 FROM table_name
 LIMIT [no of rows] OFFSET [row num]
 ```
 
-可以有如下同等表达:
+SQLite 引擎将返回从下一行开始直到给定的 OFFSET 为止的所有行，如下面的最后一个实例所示。
+
+假设 COMPANY 表有以下记录：
 
 ```
-SELECT column1, column2, columnN
-FROM table_name
-LIMIT [row num], [no of rows] 
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+1           Paul        32          California  20000.0
+2           Allen       25          Texas       15000.0
+3           Teddy       23          Norway      20000.0
+4           Mark        25          Rich-Mond   65000.0
+5           David       27          Texas       85000.0
+6           Kim         22          South-Hall  45000.0
+7           James       24          Houston     10000.0
 ```
 
-`SELECT  *   FROM trom_data  LIMIT  nNumRecord   OFFSET nBaseRow`
-表示从第nBaseRow行(基于0的索引)(包括该行)开始,取其后的nNumRecord条记录
-
-例如: LIMIT 1 OFFSET 0的意思是说在查询结果中以第0条记录为基准（包括第0条），取1条记录
-
-
-示例SQL语句:
+下面是一个实例，它限制了您想要从表中提取的行数：
 
 ```
-sqlite> select * from foods where name like 'B%' order by type_id desc, name limit 1 offset 2;
-id          type_id     name
-----------  ----------  ----------
-384         15          Big Salad
+sqlite> SELECT * FROM COMPANY LIMIT 6;
+```
 
-sqlite> select * from foods where name like 'B%' order by type_id desc, name limit 2,1;
-id          type_id     name
-----------  ----------  ----------
-384         15          Big Salad
+这将产生以下结果：
+
+```
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+1           Paul        32          California  20000.0
+2           Allen       25          Texas       15000.0
+3           Teddy       23          Norway      20000.0
+4           Mark        25          Rich-Mond   65000.0
+5           David       27          Texas       85000.0
+6           Kim         22          South-Hall  45000.0
+```
+
+但是，在某些情况下，可能需要从一个特定的偏移开始提取记录。下面是一个实例，从第三位开始提取 3 个记录：
+
+```
+sqlite> SELECT * FROM COMPANY LIMIT 3 OFFSET 2;
+```
+
+这将产生以下结果：
+
+```
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+3           Teddy       23          Norway      20000.0
+4           Mark        25          Rich-Mond   65000.0
+5           David       27          Texas       85000.0
 ```

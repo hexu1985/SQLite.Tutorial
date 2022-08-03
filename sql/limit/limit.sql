@@ -1,11 +1,9 @@
-
 .echo on
+
+.header on
 .mode column
-.headers on
-.nullvalue NULL
+SELECT * FROM COMPANY;
 
-select * from foods where name like 'B%' order by type_id desc, name limit 10; 
+SELECT * FROM COMPANY LIMIT 6;
 
-select * from foods where name like 'B%' order by type_id desc, name limit 1 offset 2;
-
-select * from foods where name like 'B%' order by type_id desc, name limit 2,1;
+SELECT * FROM COMPANY LIMIT 3 OFFSET 2;

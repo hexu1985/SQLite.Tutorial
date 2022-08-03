@@ -10,16 +10,16 @@
 - [创建表](create_tables/README.md)
 - [约束](constraint/README.md)
 - [删除表](drop_tables/README.md)
-- [insert语句](insert/README.md)
-- [update语句](update/README.md)
-- [delete语句](delete/README.md)
+- [插入记录](insert/README.md)
+- [更新记录](update/README.md)
+- [删除记录](delete/README.md)
 
 
 ### 数据库查询
 
-- [select语句](select/README.md)
-- [where子句](where/README.md)
-- [order by子句](order_by/README.md)
-- [limit子句](limit/README.md)
+- [表查询](select/README.md)
+- [过滤](where/README.md)
+- [排序](order_by/README.md)
+- [限定](limit/README.md)
 - [函数](function/README.md)
 - [聚合函数](aggregate/README.md)
