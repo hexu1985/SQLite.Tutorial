@@ -1,49 +1,88 @@
-### order by子句
+### SQLite Order By
+
+SQLite 的 ORDER BY 子句是用来基于一个或多个列按升序或降序顺序排列数据。
 
 ORDER BY 子句的基本语法如下：
 
 ```
-SELECT column-list
-FROM table_name
-[WHERE condition]
+SELECT column-list 
+FROM table_name 
+[WHERE condition] 
 [ORDER BY column1, column2, .. columnN] [ASC | DESC];
 ```
 
-示例SQL语句:
+您可以在 ORDER BY 子句中使用多个列。确保您使用的排序列在列清单中。
+
+假设 COMPANY 表有以下记录：
+
 ```
-sqlite> select * from foods where name like 'B%' order by type_id desc
-id          type_id     name
-----------  ----------  -----------
-382         15          Baked Beans
-383         15          Baked Potat
-384         15          Big Salad
-385         15          Brocolli
-362         14          Bouillabais
-326         12          Bologna
-327         12          Bacon Club
-328         12          BLT
-329         12          Brisket San
-274         10          Bacon
-275         10          Beef-A-Reen
-276         10          Brisket
-299         10          Bologna
-214         9           Big Hunk
-215         9           Black Jacks
-216         9           Bubble Gum
-192         8           Banana
-131         7           Beaujolais
-132         7           Beer
-133         7           Bosco
-108         5           Banana Yogu
-109         5           Butter
-87          4           Barbeque Sa
-63          3           Broiled Chi
-48          2           Bran
-1           1           Bagels
-2           1           Bagels, rai
-3           1           Bavarian Cr
-4           1           Bear Claws
-5           1           Black and W
-6           1           Bread (with
-7           1           Butterfinge
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+1           Paul        32          California  20000.0
+2           Allen       25          Texas       15000.0
+3           Teddy       23          Norway      20000.0
+4           Mark        25          Rich-Mond   65000.0
+5           David       27          Texas       85000.0
+6           Kim         22          South-Hall  45000.0
+7           James       24          Houston     10000.0
+```
+
+下面是一个实例，它会将结果按 SALARY 升序排序：
+
+```
+sqlite> SELECT * FROM COMPANY ORDER BY SALARY ASC;
+```
+
+这将产生以下结果：
+
+```
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+7           James       24          Houston     10000.0
+2           Allen       25          Texas       15000.0
+1           Paul        32          California  20000.0
+3           Teddy       23          Norway      20000.0
+6           Kim         22          South-Hall  45000.0
+4           Mark        25          Rich-Mond   65000.0
+5           David       27          Texas       85000.0
+```
+
+下面是一个实例，它会将结果按 NAME 和 SALARY 升序排序：
+
+```
+sqlite> SELECT * FROM COMPANY ORDER BY NAME, SALARY ASC;
+```
+
+这将产生以下结果：
+
+```
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+2           Allen       25          Texas       15000.0
+5           David       27          Texas       85000.0
+7           James       24          Houston     10000.0
+6           Kim         22          South-Hall  45000.0
+4           Mark        25          Rich-Mond   65000.0
+1           Paul        32          California  20000.0
+3           Teddy       23          Norway      20000.0
+```
+
+下面是一个实例，它会将结果按 NAME 降序排序：
+
+```
+sqlite> SELECT * FROM COMPANY ORDER BY NAME DESC;
+```
+
+这将产生以下结果：
+
+```
+ID          NAME        AGE         ADDRESS     SALARY
+----------  ----------  ----------  ----------  ----------
+3           Teddy       23          Norway      20000.0
+1           Paul        32          California  20000.0
+4           Mark        25          Rich-Mond   65000.0
+6           Kim         22          South-Hall  45000.0
+7           James       24          Houston     10000.0
+5           David       27          Texas       85000.0
+2           Allen       25          Texas       15000.0
 ```

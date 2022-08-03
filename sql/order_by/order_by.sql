@@ -1,7 +1,11 @@
-
 .echo on
-.mode column
-.headers on
-.nullvalue NULL
 
-select * from foods where name like 'B%' order by type_id desc;
+.header on
+.mode column
+SELECT * FROM COMPANY;
+
+SELECT * FROM COMPANY ORDER BY SALARY ASC;
+
+SELECT * FROM COMPANY ORDER BY NAME, SALARY ASC;
+
+SELECT * FROM COMPANY ORDER BY NAME DESC;
