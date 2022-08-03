@@ -4,15 +4,20 @@
 
 - [注释](comments/README.md)
 
+
 ### 数据库修改
 
 - [创建表](create_tables/README.md)
 - [约束](constraint/README.md)
 - [删除表](drop_tables/README.md)
+- [insert语句](insert/README.md)
+- [update语句](update/README.md)
+- [delete语句](delete/README.md)
+
 
 ### 数据库查询
 
-- [表查询](select/README.md)
+- [select语句](select/README.md)
 - [where子句](where/README.md)
 - [order by子句](order_by/README.md)
 - [limit子句](limit/README.md)
