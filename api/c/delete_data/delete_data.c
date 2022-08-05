@@ -31,36 +31,9 @@ int main()
             fprintf(stderr, "SQL error: %s\n", zErr);
             sqlite3_free(zErr);
         }
-        goto close_db;
     } else {
         printf("Total number of rows deleted : %d\n", sqlite3_changes(db));
     }
-
-    sql = "SELECT id, name, address, salary from COMPANY;";
-
-    rc = sqlite3_prepare(db, sql, (int)strlen(sql), &stmt, &tail);
-
-    if(rc != SQLITE_OK) {
-        fprintf(stderr, "SQL error: %s\n", sqlite3_errmsg(db));
-        goto close_db;
-    }
-    
-    rc = sqlite3_step(stmt);
-    while(rc == SQLITE_ROW) {
-        fprintf(stderr, "ID = %s\n", sqlite3_column_text(stmt, 0));
-        fprintf(stderr, "NAME = %s\n", sqlite3_column_text(stmt, 1));
-        fprintf(stderr, "ADDRESS = %s\n", sqlite3_column_text(stmt, 2));
-        fprintf(stderr, "SALARY = %s\n", sqlite3_column_text(stmt, 3));
-        fprintf(stderr, "\n");
-
-        rc = sqlite3_step(stmt);
-    }
-
-    printf("数据操作成功\n");
-
-    sqlite3_finalize(stmt);
-
-close_db:
 
     sqlite3_close(db);
 

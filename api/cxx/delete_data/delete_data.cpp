@@ -13,15 +13,6 @@ int main()
     db.exec("DELETE from COMPANY where ID=2;");
     printf("Total number of rows deleted : %d\n", db.getChanges());
 
-    SQLite::Statement query(db, "SELECT id, name, address, salary from COMPANY");
-    while (query.executeStep()) {
-        std::cout << "ID = " << query.getColumn(0) << "\n";
-        std::cout << "NAME = " << query.getColumn(1) << "\n";
-        std::cout << "ADDRESS = " << query.getColumn(2) << "\n";
-        std::cout << "SALARY = " << query.getColumn(3) << "\n";
-        std::cout << std::endl;
-    }
-
     printf("数据操作成功\n");
 
     return 0;
