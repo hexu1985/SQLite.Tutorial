@@ -9,7 +9,7 @@ int main()
     int rc;
     char *sql;
 
-    rc = sqlite3_open_v2("test.db", &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
+    rc = sqlite3_open_v2("test.db", &db, SQLITE_OPEN_READWRITE, NULL);
 
     if (rc) {
         fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
