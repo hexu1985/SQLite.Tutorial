@@ -21,12 +21,10 @@ set(SQLITECPP_RUN_CPPLINT OFF CACHE BOOL "" FORCE)
 find_package(SQLiteCpp REQUIRED)
 
 # Add main.cpp example source code to the executable
-add_executable(delete_named_style delete_named_style.cpp)
+add_executable(delete_qmark_style delete_qmark_style.cpp)
 
 # Link SQLiteCpp_example1 with SQLiteCpp
 #target_link_libraries(SQLiteCpp_Example SQLiteCpp)
-target_link_libraries(delete_named_style PRIVATE SQLiteCpp)
-
-
-add_executable(delete_qmark_style delete_qmark_style.cpp)
 target_link_libraries(delete_qmark_style PRIVATE SQLiteCpp)
+
+

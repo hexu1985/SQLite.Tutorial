@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <sqlite3.h>
 
 int main()
@@ -8,9 +7,7 @@ int main()
     sqlite3 *db;
     char *zErr;
     int rc;
-    sqlite3_stmt *stmt;
     char *sql;
-    const char *tail;
 
     rc = sqlite3_open_v2("test.db", &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
 
