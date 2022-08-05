@@ -1,14 +1,10 @@
-
-#include <iostream>
 #include <cstdio>
-#include <cstdlib>
-
 #include <SQLiteCpp/SQLiteCpp.h>
 #include <SQLiteCpp/ExecuteMany.h>
 
 int main()
 {
-    SQLite::Database db("test.db", SQLite::OPEN_READWRITE|SQLite::OPEN_CREATE);
+    SQLite::Database db("test.db", SQLite::OPEN_READWRITE);
     printf("数据库打开成功\n");
 
     execute_many(db, 

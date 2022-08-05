@@ -3,7 +3,7 @@
 
 int main()
 {
-    SQLite::Database db("test.db", SQLite::OPEN_READWRITE|SQLite::OPEN_CREATE);
+    SQLite::Database db("test.db", SQLite::OPEN_READWRITE);
     printf("数据库打开成功\n");
 
     SQLite::Statement qry(db, "DELETE from COMPANY where ID=?;");

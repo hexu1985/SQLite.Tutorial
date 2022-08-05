@@ -33,27 +33,21 @@ int main()
     printf("数据库打开成功\n");
 
     sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (?, ?, ?, ?, ?)";
-
     rc = sqlite3_prepare(db, sql, (int)strlen(sql), &stmt, &tail);
 
     if (rc != SQLITE_OK) {
         fprintf(stderr, "SQL error: %s\n", tail);
-        goto close_db;
+        sqlite3_close(db);
+        exit(1);
     } 
 
     reset_bind_exec(stmt, 1, "Paul", 32, "California", 20000.00);
-
     reset_bind_exec(stmt, 2, "Allen", 25, "Texas", 15000.00);
-
     reset_bind_exec(stmt, 3, "Teddy", 23, "Norway", 20000.00);
-
     reset_bind_exec(stmt, 4, "Mark", 25, "Rich-Mond ", 65000.00);
 
     sqlite3_finalize(stmt);
-
     printf("数据插入成功\n");
-
-close_db:
 
     sqlite3_close(db);
 
