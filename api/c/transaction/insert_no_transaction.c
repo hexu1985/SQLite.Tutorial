@@ -22,9 +22,7 @@ int exec_insert(sqlite3 *db, const char *sql)
 int main()
 {
     sqlite3 *db;
-    char *zErr;
     int rc;
-    char *sql;
 
     rc = sqlite3_open_v2("test.db", &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
 

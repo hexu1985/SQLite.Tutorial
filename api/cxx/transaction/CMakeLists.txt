@@ -21,8 +21,11 @@ set(SQLITECPP_RUN_CPPLINT OFF CACHE BOOL "" FORCE)
 find_package(SQLiteCpp REQUIRED)
 
 # Add main.cpp example source code to the executable
-add_executable(insert_data insert_data.cpp)
+add_executable(insert_no_transaction insert_no_transaction.cpp)
 
 # Link SQLiteCpp_example1 with SQLiteCpp
 #target_link_libraries(SQLiteCpp_Example SQLiteCpp)
-target_link_libraries(insert_data PRIVATE SQLiteCpp)
+target_link_libraries(insert_no_transaction PRIVATE SQLiteCpp)
+
+add_executable(insert_with_transaction insert_with_transaction.cpp)
+target_link_libraries(insert_with_transaction PRIVATE SQLiteCpp)

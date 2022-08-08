@@ -5,7 +5,7 @@
 
 #include <SQLiteCpp/SQLiteCpp.h>
 
-int main()
+int main() try
 {
     SQLite::Database db("test.db", SQLite::OPEN_READWRITE|SQLite::OPEN_CREATE);
     printf("数据库打开成功\n");
@@ -33,5 +33,9 @@ int main()
     }
 
     return 0;
+}
+catch (const SQLite::Exception &e)
+{
+    std::cout << "SQL error: " << e.what() << std::endl;
 }
 
